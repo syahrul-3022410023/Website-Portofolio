@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Syahrul Romadhon — UI/UX Designer & Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- ===== LOADER ===== -->
+    <div id="loader">
+        <div class="loader-curtain" id="curtain"></div>
+        <div class="loader-content" id="loaderContent">
+            <span class="loader-dot"></span>
+            <span class="loader-text" id="loaderText">Hello.</span>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <nav class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#work">Achievements</a></li>
+                <li><a href="#org">Organisation</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile menu — outside header agar pointer-events berfungsi -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Achievements</a>
+        <a href="#org">Organisasi</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+        <canvas id="heroCanvas"></canvas>
+
+        <div class="hero-left-widget">
+            <div class="loc-text">
+                Located in<br>Surabaya, ID
+            </div>
+            <div class="loc-icon-btn">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="hero-right-widget">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="role-arrow">
+                <path d="M7 7l10 10M17 7v10H7"></path>
+            </svg>
+            <div class="role-desc">
+                Freelance<br>
+                <span id="roleText" class="role-rotating-text">UI/UX Designer</span>
+            </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+            <div class="hero-photo" id="heroPhoto">
+                <img src="Syahrul.png" alt="Syahrul Romadhon" id="heroImg"
+                    onerror="this.parentElement.innerHTML='<span class=hero-initials>SR</span>'" />
+                <div class="hero-photo-glare" id="photoGlare"></div>
+                <div class="hero-face-glare" id="faceGlare"></div>
+            </div>
+        </div>
+
+        <div class="hero-name-strip">
+            <div class="hero-name-inner" id="heroNameInner">
+                <span>Syahrul Romadhon&nbsp;—&nbsp;</span>
+                <span aria-hidden="true">Syahrul Romadhon&nbsp;—&nbsp;</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MANIFESTO & RECENT WORK ===== -->
+    <section id="about" class="section manifesto-section">
+        <div class="container">
+            <div class="manifesto-top reveal">
+                <div class="manifesto-left">
+                    <h2 class="manifesto-title" data-text="Syahrul Romadhon.">Syahrul Romadhon.</h2>
+                </div>
+                <div class="manifesto-right">
+                    <p class="manifesto-desc">Mahasiswa aktif Program Studi Sistem Informasi yang memiliki minat di bidang UI/UX Design dan Digital Creative. Berpengalaman dalam desain grafis, pengelolaan media sosial, serta produksi konten visual seperti fotografi dan videografi. Terbiasa menggunakan berbagai tools desain untuk menghasilkan karya yang menarik, fungsional, dan user-friendly. Aktif dalam berbagai proyek kreatif serta menjalankan jasa freelance di bidang creative media</p>
+                    <div class="manifesto-btn-wrapper" style="margin-top:40px; display:flex; justify-content:flex-end;">
+                        <a href="#contact" class="circle-btn liquid-btn">
+                            <span>Hire Me</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== WORK LIST ===== -->
+    <section id="experience" class="section work-list-section">
+        <div class="container">
+            <div class="work-list-header reveal">
+                <span class="work-list-eyebrow">Work Experience</span>
+            </div>
+            <div class="work-list">
+                <div class="work-item reveal">
+                    <div class="work-item-left">
+                        <h3 class="work-title">Creative Agency</h3>
+                    </div>
+                    <div class="work-item-right">
+                        <span class="work-category">CFO & Creative Director</span>
+                        <span class="work-year">2026 — Sekarang</span>
+                    </div>
+                </div>
+                <div class="work-item reveal">
+                    <div class="work-item-left">
+                        <h3 class="work-title">UISI Divisi Mahasiswa</h3>
+                    </div>
+                    <div class="work-item-right">
+                        <span class="work-category">Fullstack Developer Intern</span>
+                        <span class="work-year">Feb 2026 — Sekarang</span>
+                    </div>
+                </div>
+                <div class="work-item reveal">
+                    <div class="work-item-left">
+                        <h3 class="work-title">UISI Marketing</h3>
+                    </div>
+                    <div class="work-item-right">
+                        <span class="work-category">UI/UX Designer Intern</span>
+                        <span class="work-year">Jan 2026 — Apr 2026</span>
+                    </div>
+                </div>
+                <div class="work-item reveal">
+                    <div class="work-item-left">
+                        <h3 class="work-title">Social Media Specialist</h3>
+                    </div>
+                    <div class="work-item-right">
+                        <span class="work-category">Social Media Specialist</span>
+                        <span class="work-year">Okt 2025 — Des 2025</span>
+                    </div>
+                </div>
+                <div class="work-item reveal">
+                    <div class="work-item-left">
+                        <h3 class="work-title">JustTrip</h3>
+                    </div>
+                    <div class="work-item-right">
+                        <span class="work-category">Social Media Specialist</span>
+                        <span class="work-year">Sep 2025 — Nov 2025</span>
+                    </div>
+                </div>
+                <div class="work-item reveal">
+                    <div class="work-item-left">
+                        <h3 class="work-title">Freelance Creative</h3>
+                    </div>
+                    <div class="work-item-right">
+                        <span class="work-category">UI/UX, Grafis, Foto & Video</span>
+                        <span class="work-year">Jun 2022 — Sekarang</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="section edu-section">
+        <div class="container">
+            <div class="section-split reveal">
+                <div class="sec-meta">
+                    <span class="sec-number">01</span>
+                    <p class="sec-eyebrow">Education</p>
+                    <h2 class="sec-heading">Pendidikan</h2>
+                </div>
+                <div class="sec-content">
+                    <div class="premium-list">
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-meta">
+                                <span class="list-item-year">2024 — Sekarang</span>
+                                <span class="list-item-loc">Gresik, ID</span>
+                            </div>
+                            <div class="list-item-main">
+                                <h3 class="list-item-title">S1 Sistem Informasi</h3>
+                                <p class="list-item-sub">Universitas Internasional Semen Indonesia</p>
+                            </div>
+                            <div class="list-item-tags">
+                                <span class="premium-tag accent-tag">IPK 3,82</span>
+                                <span class="premium-tag">Beasiswa Aperti BUMN 2024–2028</span>
+                            </div>
+                        </div>
+
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-meta">
+                                <span class="list-item-year">2022 — 2024</span>
+                                <span class="list-item-loc">Lamongan, ID</span>
+                            </div>
+                            <div class="list-item-main">
+                                <h3 class="list-item-title">Ilmu Pengetahuan Alam</h3>
+                                <p class="list-item-sub">MA Matholi'ul Anwar</p>
+                            </div>
+                            <div class="list-item-tags">
+                                <span class="premium-tag accent-tag">Nilai 86,84</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-split reveal">
+                <div class="sec-meta">
+                    <span class="sec-number">02</span>
+                    <p class="sec-eyebrow">Skills</p>
+                    <h2 class="sec-heading">Keahlian Saya</h2>
+                </div>
+                <div class="sec-content">
+                    <div class="premium-list">
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-main">
+                                <h3 class="list-item-title"><span class="sk-emoji">🎨</span> UI/UX Design</h3>
+                            </div>
+                            <div class="list-item-desc">
+                                Figma, Wireframing, Prototyping, User Research, User-Centered Design
+                            </div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-main">
+                                <h3 class="list-item-title"><span class="sk-emoji">💻</span> Web Development</h3>
+                            </div>
+                            <div class="list-item-desc">
+                                HTML, CSS, JavaScript, Laravel, PHP, Visual Studio Code
+                            </div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-main">
+                                <h3 class="list-item-title"><span class="sk-emoji">✏️</span> Graphic Design</h3>
+                            </div>
+                            <div class="list-item-desc">
+                                Adobe Photoshop, Canva, Branding, Logo, Poster, Banner
+                            </div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-main">
+                                <h3 class="list-item-title"><span class="sk-emoji">📷</span> Photo & Video</h3>
+                            </div>
+                            <div class="list-item-desc">
+                                Fotografi, Videografi, Content Creation, CapCut, Editing
+                            </div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-main">
+                                <h3 class="list-item-title"><span class="sk-emoji">📱</span> Social Media</h3>
+                            </div>
+                            <div class="list-item-desc">
+                                Manajemen Konten, Strategi Brand, Notion, Trello, Jira
+                            </div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-main">
+                                <h3 class="list-item-title"><span class="sk-emoji">🤝</span> Soft Skills</h3>
+                            </div>
+                            <div class="list-item-desc">
+                                Komunikasi, Kerja Tim, Problem Solving, Manajemen Waktu, Adaptif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACHIEVEMENTS ===== -->
+    <!-- PERBAIKAN: ach-emoji tanpa kotak (hapus class ach-emoji, ganti jadi teks emoji plain) -->
+    <section id="work" class="section ach-section">
+        <div class="container">
+            <div class="section-split reveal">
+                <div class="sec-meta">
+                    <span class="sec-number">03</span>
+                    <p class="sec-eyebrow">Achievements</p>
+                    <h2 class="sec-heading">Pencapaian</h2>
+                </div>
+                <div class="sec-content">
+                    <div class="premium-list density-high">
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-rank-wrap"><span class="ach-icon">🥇</span></div>
+                            <div class="list-item-achievement"><h3>UX Design — FESMARO</h3><p>Universitas Negeri Malang</p></div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-rank-wrap"><span class="ach-icon">🥇</span></div>
+                            <div class="list-item-achievement"><h3>UI/UX Design — Fakultas MIPA</h3><p>Universitas Riau</p></div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-rank-wrap"><span class="ach-icon">🥇</span></div>
+                            <div class="list-item-achievement"><h3>Fotografi — PENS</h3><p>Politeknik Elektronika Negeri Surabaya</p></div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-rank-wrap"><span class="ach-icon">🥈</span></div>
+                            <div class="list-item-achievement"><h3>UI Design — ISME</h3><p>Himpunan SI, Universitas Internasional Semen Indonesia</p></div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-rank-wrap"><span class="ach-icon">🥉</span></div>
+                            <div class="list-item-achievement"><h3>Film Pendek — Himpunan Mhs. Sejarah</h3><p>Universitas Jember</p></div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-rank-wrap"><span class="ach-icon">⭐</span></div>
+                            <div class="list-item-achievement"><h3>Juara Favorit Videografi</h3><p>Universitas Islam Malang</p></div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-rank-wrap"><span class="ach-icon">🏅</span></div>
+                            <div class="list-item-achievement"><h3>Finalis Lomba Desain Poster</h3><p>IDI Lamongan</p></div>
+                        </div>
+                        <div class="premium-list-item reveal">
+                            <div class="list-item-rank-wrap"><span class="ach-icon">🎓</span></div>
+                            <div class="list-item-achievement"><h3>Mahasiswa Berprestasi</h3><p>Program Studi Sistem Informasi UISI</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ORGANISATIONS ===== -->
+    <section id="org" class="section org-section">
+        <div class="container">
+            <div class="section-split reveal">
+                <div class="sec-meta">
+                    <span class="sec-number">04</span>
+                    <p class="sec-eyebrow">Organisation</p>
+                    <h2 class="sec-heading">Organisasi</h2>
+                </div>
+                <div class="sec-content">
+                    <div class="premium-list">
+                        <div class="premium-list-item block-layout reveal">
+                            <div class="list-item-header">
+                                <div class="list-item-meta-left">
+                                    <h3 class="list-item-title">Staf Multimedia</h3>
+                                    <p class="list-item-sub">UISI Media</p>
+                                </div>
+                                <div class="list-item-meta-right">
+                                    <span class="list-item-year">2025 — Sekarang</span>
+                                    <span class="list-item-loc">Gresik, ID</span>
+                                </div>
+                            </div>
+                            <div class="list-item-body">
+                                <ul class="premium-bullets">
+                                    <li>Membuat dan mengelola konten visual untuk media informasi kampus</li>
+                                    <li>Mendesain berbagai kebutuhan publikasi seperti poster, banner, dan konten digital</li>
+                                    <li>Berkontribusi dalam pengelolaan media sosial untuk meningkatkan penyebaran informasi</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="premium-list-item block-layout reveal">
+                            <div class="list-item-header">
+                                <div class="list-item-meta-left">
+                                    <h3 class="list-item-title">Staf Divisi Kominfo</h3>
+                                    <p class="list-item-sub">Himpunan Mahasiswa Sistem Informasi</p>
+                                </div>
+                                <div class="list-item-meta-right">
+                                    <span class="list-item-year">2025 — Sekarang</span>
+                                    <span class="list-item-loc">Gresik, ID</span>
+                                </div>
+                            </div>
+                            <div class="list-item-body">
+                                <ul class="premium-bullets">
+                                    <li>Mendesain konten visual untuk kebutuhan media sosial dan branding organisasi</li>
+                                    <li>Mengelola dan mengembangkan konten Instagram organisasi bersama tim</li>
+                                    <li>Membuat berbagai desain (feed, story, poster, banner) untuk mendukung komunikasi visual</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="premium-list-item block-layout reveal">
+                            <div class="list-item-header">
+                                <div class="list-item-meta-left">
+                                    <h3 class="list-item-title">Intern Divisi Kominfo</h3>
+                                    <p class="list-item-sub">Himpunan Mahasiswa Sistem Informasi</p>
+                                </div>
+                                <div class="list-item-meta-right">
+                                    <span class="list-item-year">2024 — 2025</span>
+                                    <span class="list-item-loc">Gresik, ID</span>
+                                </div>
+                            </div>
+                            <div class="list-item-body">
+                                <ul class="premium-bullets">
+                                    <li>Mendesain konten visual untuk kebutuhan media sosial dan branding organisasi</li>
+                                    <li>Mengelola dan mengembangkan konten Instagram organisasi bersama tim</li>
+                                    <li>Membuat berbagai desain (feed, story, poster, banner) untuk mendukung komunikasi visual</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO / DOKUMENTASI ===== -->
+    <section id="portfolio" class="section portfolio-section">
+        <div class="container">
+            <div class="portfolio-header reveal">
+                <div class="portfolio-meta">
+                    <span class="sec-number">05</span>
+                    <p class="sec-eyebrow">Portfolio</p>
+                    <h2 class="sec-heading">Dokumentasi<br>& Karya</h2>
+                </div>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="masonry-grid reveal">
+
+                <!-- Card 1 — UI/UX (tall) -->
+                <div class="masonry-card masonry-card--tall" data-slides='["https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80","https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&q=80","https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80"]'>
+                    <div class="masonry-img-wrap">
+                        <img class="masonry-img" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="UI/UX Design" onerror="this.parentElement.querySelector('.masonry-fallback').style.display='flex';this.style.display='none'" />
+                        <div class="masonry-fallback" style="background:linear-gradient(135deg,#1c2340,#2e3f6e)"><span>🎨</span></div>
+                        <!-- Slideshow controls overlay -->
+                        <button class="masonry-play-btn" aria-label="Play/Pause slideshow">
+                            <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                            <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                        </button>
+                        <div class="masonry-dots"></div>
+                        <div class="masonry-progress-bar"><div class="masonry-progress-fill"></div></div>
+                    </div>
+                    <div class="masonry-info">
+                        <h3 class="masonry-title">UI/UX Design</h3>
+                        <p class="masonry-cats">Figma, Prototyping, User Research</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 — Web Dev (normal) -->
+                <div class="masonry-card" data-slides='["https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80","https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&q=80"]'>
+                    <div class="masonry-img-wrap">
+                        <img class="masonry-img" src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80" alt="Web Development" onerror="this.parentElement.querySelector('.masonry-fallback').style.display='flex';this.style.display='none'" />
+                        <div class="masonry-fallback" style="background:linear-gradient(135deg,#1a2535,#243550)"><span>💻</span></div>
+                        <button class="masonry-play-btn" aria-label="Play/Pause slideshow">
+                            <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                            <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                        </button>
+                        <div class="masonry-dots"></div>
+                        <div class="masonry-progress-bar"><div class="masonry-progress-fill"></div></div>
+                    </div>
+                    <div class="masonry-info">
+                        <h3 class="masonry-title">Web Development</h3>
+                        <p class="masonry-cats">HTML, CSS, JavaScript, Laravel</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 — Graphic Design (normal) -->
+                <div class="masonry-card" data-slides='["https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=80","https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=600&q=80","https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80"]'>
+                    <div class="masonry-img-wrap">
+                        <img class="masonry-img" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=80" alt="Graphic Design" onerror="this.parentElement.querySelector('.masonry-fallback').style.display='flex';this.style.display='none'" />
+                        <div class="masonry-fallback" style="background:linear-gradient(135deg,#2d1a2e,#4a2050)"><span>✏️</span></div>
+                        <button class="masonry-play-btn" aria-label="Play/Pause slideshow">
+                            <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                            <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                        </button>
+                        <div class="masonry-dots"></div>
+                        <div class="masonry-progress-bar"><div class="masonry-progress-fill"></div></div>
+                    </div>
+                    <div class="masonry-info">
+                        <h3 class="masonry-title">Graphic Design</h3>
+                        <p class="masonry-cats">Adobe Photoshop, Canva, Branding</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 — Photo & Video (wide) -->
+                <div class="masonry-card masonry-card--wide" data-slides='["https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80","https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80","https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=80","https://images.unsplash.com/photo-1604514628550-37477afdf4e3?w=800&q=80"]'>
+                    <div class="masonry-img-wrap">
+                        <img class="masonry-img" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80" alt="Fotografi & Videografi" onerror="this.parentElement.querySelector('.masonry-fallback').style.display='flex';this.style.display='none'" />
+                        <div class="masonry-fallback" style="background:linear-gradient(135deg,#1c2215,#2d3820)"><span>📷</span></div>
+                        <button class="masonry-play-btn" aria-label="Play/Pause slideshow">
+                            <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                            <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                        </button>
+                        <div class="masonry-dots"></div>
+                        <div class="masonry-progress-bar"><div class="masonry-progress-fill"></div></div>
+                    </div>
+                    <div class="masonry-info">
+                        <h3 class="masonry-title">Fotografi & Videografi</h3>
+                        <p class="masonry-cats">Fotografi, Videografi, Content Creation</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 — Social Media (normal) -->
+                <div class="masonry-card" data-slides='["https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80","https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=600&q=80"]'>
+                    <div class="masonry-img-wrap">
+                        <img class="masonry-img" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80" alt="Social Media" onerror="this.parentElement.querySelector('.masonry-fallback').style.display='flex';this.style.display='none'" />
+                        <div class="masonry-fallback" style="background:linear-gradient(135deg,#111f22,#1a3035)"><span>📱</span></div>
+                        <button class="masonry-play-btn" aria-label="Play/Pause slideshow">
+                            <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                            <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                        </button>
+                        <div class="masonry-dots"></div>
+                        <div class="masonry-progress-bar"><div class="masonry-progress-fill"></div></div>
+                    </div>
+                    <div class="masonry-info">
+                        <h3 class="masonry-title">Social Media</h3>
+                        <p class="masonry-cats">Manajemen Konten, Strategi Brand</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-header reveal">
+                <span class="sec-number">06</span>
+                <p class="sec-eyebrow">Contact</p>
+                <h2 class="sec-heading contact-heading">Mari Bekerja<br>Sama.</h2>
+                <p class="contact-tagline">Terbuka untuk project freelance, internship, maupun kolaborasi kreatif.</p>
+            </div>
+            <div class="contact-body reveal">
+                <!-- Left: contact info cards -->
+                <div class="contact-info-side">
+                    <a href="mailto:shrl.rmdn23@gmail.com" class="contact-card">
+                        <span class="contact-card-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 7 10-7"/></svg>
+                        </span>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">Email</span>
+                            <span class="contact-card-val">shrl.rmdn23@gmail.com</span>
+                        </div>
+                        <svg class="contact-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                    <a href="tel:085746938622" class="contact-card">
+                        <span class="contact-card-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10a16 16 0 0 0 6.09 6.09l.95-.93a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </span>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">Phone</span>
+                            <span class="contact-card-val">0857 4693 8622</span>
+                        </div>
+                        <svg class="contact-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/syahrul-romadhon" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <span class="contact-card-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </span>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">LinkedIn</span>
+                            <span class="contact-card-val">Syahrul Romadhon</span>
+                        </div>
+                        <svg class="contact-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                    <div class="contact-card no-link">
+                        <span class="contact-card-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </span>
+                        <div class="contact-card-body">
+                            <span class="contact-card-label">Lokasi</span>
+                            <span class="contact-card-val">Surabaya, Jawa Timur</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: contact form -->
+                <div class="contact-form-side">
+                    <form class="premium-contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="fname" class="form-label">Nama Lengkap</label>
+                            <input type="text" id="fname" placeholder="Masukkan nama lengkap Anda" required />
+                            <small id="e-name" class="err-msg"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="femail" class="form-label">Alamat Email</label>
+                            <input type="email" id="femail" placeholder="Masukkan alamat email Anda" required />
+                            <small id="e-email" class="err-msg"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="fmsg" class="form-label">Pesan Anda</label>
+                            <textarea id="fmsg" rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                            <small id="e-msg" class="err-msg"></small>
+                        </div>
+                        <div class="form-submit-wrap">
+                            <button type="submit" class="btn-submit-premium">Kirim Pesan →</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-inner">
+            <span>© 2026 Syahrul Romadhon</span>
+            <span>Sistem Informasi — UISI</span>
+        </div>
+    </footer>
+
+    <!-- floating theme toggle -->
+    <button class="theme-btn-float" id="themeBtn" aria-label="Toggle theme">
+        <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
