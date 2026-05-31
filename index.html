@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Syahrul Romadhon — UI/UX Designer & Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -96,20 +96,48 @@
         </div>
     </section>
 
-    <!-- ===== MANIFESTO & RECENT WORK ===== -->
-    <section id="about" class="section manifesto-section">
-        <div class="container">
-            <div class="manifesto-top reveal">
-                <div class="manifesto-left">
-                    <h2 class="manifesto-title" data-text="Syahrul Romadhon.">Syahrul Romadhon.</h2>
+    <!-- ===== ABOUT ME ===== -->
+    <section id="about" class="section about-new-section">
+        <div class="container relative-container">
+            
+            <div class="about-eyebrow reveal">
+                <div class="line"></div>
+                <span>About us</span>
+                <div class="line"></div>
+            </div>
+
+            <div class="about-center-text typewriter-container reveal">
+                <p id="about-typewriter" data-text="Mahasiswa Sistem Informasi yang berfokus pada UI/UX Design dan Digital Creative. Berpengalaman dalam desain grafis, pengelolaan media sosial, serta pembuatan konten visual yang menarik dan berorientasi pada pengguna."></p>
+            </div>
+
+            <!-- Floating Skill Pills -->
+            <div class="skill-pills-wrapper">
+                <!-- Left Pills -->
+                <div class="skill-pill pill-left pill-1 reveal-pill">
+                    <span class="pill-icon" style="background: #27E55C; color: #111; border-color: transparent;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></span>
+                    <span class="pill-text">Design systems</span>
                 </div>
-                <div class="manifesto-right">
-                    <p class="manifesto-desc">Mahasiswa aktif Program Studi Sistem Informasi yang memiliki minat di bidang UI/UX Design dan Digital Creative. Berpengalaman dalam desain grafis, pengelolaan media sosial, serta produksi konten visual seperti fotografi dan videografi. Terbiasa menggunakan berbagai tools desain untuk menghasilkan karya yang menarik, fungsional, dan user-friendly. Aktif dalam berbagai proyek kreatif serta menjalankan jasa freelance di bidang creative media</p>
-                    <div class="manifesto-btn-wrapper" style="margin-top:40px; display:flex; justify-content:flex-end;">
-                        <a href="#contact" class="circle-btn liquid-btn">
-                            <span>Hire Me</span>
-                        </a>
-                    </div>
+                <div class="skill-pill pill-left pill-2 reveal-pill" style="animation-delay: 0.1s;">
+                    <span class="pill-icon" style="background: #FF389C; color: #fff; border-color: transparent;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg></span>
+                    <span class="pill-text">UI/UX</span>
+                </div>
+                <div class="skill-pill pill-left pill-3 reveal-pill" style="animation-delay: 0.2s;">
+                    <span class="pill-icon" style="background: #FFD100; color: #111; border-color: transparent;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+                    <span class="pill-text">Research</span>
+                </div>
+
+                <!-- Right Pills -->
+                <div class="skill-pill pill-right pill-4 reveal-pill" style="animation-delay: 0.15s;">
+                    <span class="pill-icon" style="background: #27E55C; color: #111; border-color: transparent;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+                    <span class="pill-text">Animation</span>
+                </div>
+                <div class="skill-pill pill-right pill-5 reveal-pill" style="animation-delay: 0.25s;">
+                    <span class="pill-icon" style="background: #FF389C; color: #fff; border-color: transparent;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></span>
+                    <span class="pill-text">Prototyping</span>
+                </div>
+                <div class="skill-pill pill-right pill-6 reveal-pill" style="animation-delay: 0.35s;">
+                    <span class="pill-icon" style="background: #FFD100; color: #111; border-color: transparent;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                    <span class="pill-text">Strategy</span>
                 </div>
             </div>
 
@@ -424,104 +452,75 @@
                 <div class="portfolio-meta">
                     <span class="sec-number">05</span>
                     <p class="sec-eyebrow">Portfolio</p>
-                    <h2 class="sec-heading">Dokumentasi<br>& Karya</h2>
-                </div>
+                    <h2 class="sec-            <!-- Category Filter Bar -->
+            <div class="portfolio-filter reveal">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
+                <button class="filter-btn" data-filter="web-dev">Web Development</button>
+                <button class="filter-btn" data-filter="graphic-design">Graphic Design</button>
             </div>
 
-            <!-- Masonry Grid -->
-            <div class="masonry-grid reveal">
+            <!-- Portfolio Project List -->
+            <div class="project-list reveal premium-portfolio-grid">
 
-                <!-- Card 1 — UI/UX (tall) -->
-                <div class="masonry-card masonry-card--tall" data-slides='["https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80","https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&q=80","https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80"]'>
-                    <div class="masonry-img-wrap">
-                        <img class="masonry-img" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="UI/UX Design" onerror="this.parentElement.querySelector('.masonry-fallback').style.display='flex';this.style.display='none'" />
-                        <div class="masonry-fallback" style="background:linear-gradient(135deg,#1c2340,#2e3f6e)"><span>🎨</span></div>
-                        <!-- Slideshow controls overlay -->
-                        <button class="masonry-play-btn" aria-label="Play/Pause slideshow">
-                            <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-                            <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                        </button>
-                        <div class="masonry-dots"></div>
-                        <div class="masonry-progress-bar"><div class="masonry-progress-fill"></div></div>
+                <!-- Project 1 -->
+                <div class="premium-port-card magnetic-hover" data-category="ui-ux">
+                    <div class="port-image-container">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80" alt="Lumora Beauty Rebrand">
                     </div>
-                    <div class="masonry-info">
-                        <h3 class="masonry-title">UI/UX Design</h3>
-                        <p class="masonry-cats">Figma, Prototyping, User Research</p>
+                    <div class="port-card-footer">
+                        <h3 class="port-card-title">Lumora Beauty Rebrand</h3>
+                        <div class="port-tags">
+                            <span class="port-tag">UI/UX</span>
+                            <span class="port-tag">Branding</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 2 — Web Dev (normal) -->
-                <div class="masonry-card" data-slides='["https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80","https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&q=80"]'>
-                    <div class="masonry-img-wrap">
-                        <img class="masonry-img" src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80" alt="Web Development" onerror="this.parentElement.querySelector('.masonry-fallback').style.display='flex';this.style.display='none'" />
-                        <div class="masonry-fallback" style="background:linear-gradient(135deg,#1a2535,#243550)"><span>💻</span></div>
-                        <button class="masonry-play-btn" aria-label="Play/Pause slideshow">
-                            <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-                            <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                        </button>
-                        <div class="masonry-dots"></div>
-                        <div class="masonry-progress-bar"><div class="masonry-progress-fill"></div></div>
+                <!-- Project 2 -->
+                <div class="premium-port-card magnetic-hover" data-category="web-dev">
+                    <div class="port-image-container">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80" alt="UISI Student Portal">
                     </div>
-                    <div class="masonry-info">
-                        <h3 class="masonry-title">Web Development</h3>
-                        <p class="masonry-cats">HTML, CSS, JavaScript, Laravel</p>
+                    <div class="port-card-footer">
+                        <h3 class="port-card-title">UISI Student Portal</h3>
+                        <div class="port-tags">
+                            <span class="port-tag">Web Dev</span>
+                            <span class="port-tag">System</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 3 — Graphic Design (normal) -->
-                <div class="masonry-card" data-slides='["https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=80","https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=600&q=80","https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80"]'>
-                    <div class="masonry-img-wrap">
-                        <img class="masonry-img" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=80" alt="Graphic Design" onerror="this.parentElement.querySelector('.masonry-fallback').style.display='flex';this.style.display='none'" />
-                        <div class="masonry-fallback" style="background:linear-gradient(135deg,#2d1a2e,#4a2050)"><span>✏️</span></div>
-                        <button class="masonry-play-btn" aria-label="Play/Pause slideshow">
-                            <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-                            <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                        </button>
-                        <div class="masonry-dots"></div>
-                        <div class="masonry-progress-bar"><div class="masonry-progress-fill"></div></div>
+                <!-- Project 3 -->
+                <div class="premium-port-card magnetic-hover" data-category="web-dev">
+                    <div class="port-image-container">
+                        <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=800&q=80" alt="JustTrip Web App">
                     </div>
-                    <div class="masonry-info">
-                        <h3 class="masonry-title">Graphic Design</h3>
-                        <p class="masonry-cats">Adobe Photoshop, Canva, Branding</p>
+                    <div class="port-card-footer">
+                        <h3 class="port-card-title">JustTrip Web App</h3>
+                        <div class="port-tags">
+                            <span class="port-tag">Web App</span>
+                            <span class="port-tag">UI/UX</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 4 — Photo & Video (wide) -->
-                <div class="masonry-card masonry-card--wide" data-slides='["https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80","https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80","https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=80","https://images.unsplash.com/photo-1604514628550-37477afdf4e3?w=800&q=80"]'>
-                    <div class="masonry-img-wrap">
-                        <img class="masonry-img" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80" alt="Fotografi & Videografi" onerror="this.parentElement.querySelector('.masonry-fallback').style.display='flex';this.style.display='none'" />
-                        <div class="masonry-fallback" style="background:linear-gradient(135deg,#1c2215,#2d3820)"><span>📷</span></div>
-                        <button class="masonry-play-btn" aria-label="Play/Pause slideshow">
-                            <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-                            <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                        </button>
-                        <div class="masonry-dots"></div>
-                        <div class="masonry-progress-bar"><div class="masonry-progress-fill"></div></div>
+                <!-- Project 4 -->
+                <div class="premium-port-card magnetic-hover" data-category="graphic-design">
+                    <div class="port-image-container">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80" alt="Local Brand Identity">
                     </div>
-                    <div class="masonry-info">
-                        <h3 class="masonry-title">Fotografi & Videografi</h3>
-                        <p class="masonry-cats">Fotografi, Videografi, Content Creation</p>
+                    <div class="port-card-footer">
+                        <h3 class="port-card-title">Local Brand Identity</h3>
+                        <div class="port-tags">
+                            <span class="port-tag">Graphic Design</span>
+                            <span class="port-tag">Campaign</span>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Card 5 — Social Media (normal) -->
-                <div class="masonry-card" data-slides='["https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80","https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=600&q=80"]'>
-                    <div class="masonry-img-wrap">
-                        <img class="masonry-img" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80" alt="Social Media" onerror="this.parentElement.querySelector('.masonry-fallback').style.display='flex';this.style.display='none'" />
-                        <div class="masonry-fallback" style="background:linear-gradient(135deg,#111f22,#1a3035)"><span>📱</span></div>
-                        <button class="masonry-play-btn" aria-label="Play/Pause slideshow">
-                            <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-                            <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                        </button>
-                        <div class="masonry-dots"></div>
-                        <div class="masonry-progress-bar"><div class="masonry-progress-fill"></div></div>
-                    </div>
-                    <div class="masonry-info">
-                        <h3 class="masonry-title">Social Media</h3>
-                        <p class="masonry-cats">Manajemen Konten, Strategi Brand</p>
+            </div>      </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -558,7 +557,7 @@
                         </div>
                         <svg class="contact-card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                     </a>
-                    <a href="https://linkedin.com/in/syahrul-romadhon" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <a href="https://www.linkedin.com/in/syahrulromadhon30" target="_blank" rel="noopener noreferrer" class="contact-card">
                         <span class="contact-card-icon">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                         </span>
@@ -581,7 +580,7 @@
 
                 <!-- Right: contact form -->
                 <div class="contact-form-side">
-                    <form class="premium-contact-form" id="contactForm">
+                    <form class="premium-contact-form" id="contactForm" style="display:flex;flex-direction:column;height:100%;">
                         <div class="form-group">
                             <label for="fname" class="form-label">Nama Lengkap</label>
                             <input type="text" id="fname" placeholder="Masukkan nama lengkap Anda" required />
@@ -592,9 +591,9 @@
                             <input type="email" id="femail" placeholder="Masukkan alamat email Anda" required />
                             <small id="e-email" class="err-msg"></small>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="flex:1;display:flex;flex-direction:column;">
                             <label for="fmsg" class="form-label">Pesan Anda</label>
-                            <textarea id="fmsg" rows="5" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                            <textarea id="fmsg" placeholder="Tuliskan pesan Anda di sini..." required style="flex:1;min-height:100px;"></textarea>
                             <small id="e-msg" class="err-msg"></small>
                         </div>
                         <div class="form-submit-wrap">

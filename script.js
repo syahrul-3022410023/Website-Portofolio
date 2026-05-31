@@ -349,38 +349,50 @@ document.addEventListener('click', (e) => {
 
 
 /* ========================
-   PORTFOLIO CARD SLIDER
+   PORTFOLIO CATEGORY FILTER
    ======================== */
 (function () {
-    const track  = document.getElementById('portTrack');
-    const btnP   = document.getElementById('portPrev');
-    const btnN   = document.getElementById('portNext');
-    if (!track || !btnP || !btnN) return;
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards      = document.querySelectorAll('.premium-port-card');
 
-    const gap    = 20;
-    let offset   = 0;
-    const cardW  = () => (track.querySelector('.port-card')?.offsetWidth || 280) + gap;
-    const maxOff = () => track.scrollWidth - track.parentElement.offsetWidth;
+    if (!filterBtns.length || !cards.length) return;
 
-    btnN.addEventListener('click', () => {
-        offset = Math.min(offset + cardW(), maxOff());
-        track.style.transform = `translateX(-${offset}px)`;
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state on buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category');
+
+                // If filter is 'all' or matches the card's category
+                if (filterValue === 'all' || category === filterValue) {
+                    card.classList.remove('filtered-out');
+                    card.style.display = '';
+                    // Add fade-in-up class to trigger animation
+                    card.classList.add('fade-in-up');
+                    
+                    // Cleanup animation class after it finishes
+                    card.addEventListener('animationend', function handler() {
+                        card.classList.remove('fade-in-up');
+                        card.removeEventListener('animationend', handler);
+                    });
+                } else {
+                    card.classList.add('filtered-out');
+                    card.classList.remove('fade-in-up');
+                    // Hide after fade out
+                    setTimeout(() => {
+                        if (card.classList.contains('filtered-out')) {
+                            card.style.display = 'none';
+                        }
+                    }, 350);
+                }
+            });
+        });
     });
-    btnP.addEventListener('click', () => {
-        offset = Math.max(offset - cardW(), 0);
-        track.style.transform = `translateX(-${offset}px)`;
-    });
-
-    // Touch swipe
-    let sx = 0;
-    track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchend', e => {
-        const dx = sx - e.changedTouches[0].clientX;
-        if (Math.abs(dx) < 40) return;
-        if (dx > 0) offset = Math.min(offset + cardW(), maxOff());
-        else        offset = Math.max(offset - cardW(), 0);
-        track.style.transform = `translateX(-${offset}px)`;
-    }, { passive: true });
 })();
 
 
@@ -426,13 +438,42 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
 
 /* ========================
-   SCROLL REVEAL
+   SCROLL REVEAL & TYPEWRITER
    ======================== */
+function typeWriter(el, speed = 15) {
+    const text = el.getAttribute('data-text');
+    if (!text || el.classList.contains('typing-done')) return;
+    el.textContent = '';
+    let i = 0;
+    const interval = setInterval(() => {
+        if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+        } else {
+            clearInterval(interval);
+            el.classList.add('typing-done');
+        }
+    }, speed);
+}
+
 const revObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+    entries.forEach(e => { 
+        if (e.isIntersecting) {
+            if (!e.target.classList.contains('on')) {
+                e.target.classList.add('on'); 
+                if (e.target.classList.contains('reveal-pill')) {
+                    e.target.classList.add('active');
+                }
+                if (e.target.classList.contains('typewriter-container')) {
+                    const p = e.target.querySelector('#about-typewriter');
+                    if (p) typeWriter(p, 15);
+                }
+            }
+        }
+    });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+document.querySelectorAll('.reveal, .reveal-pill').forEach(el => revObs.observe(el));
 
 
 /* ========================
@@ -632,12 +673,12 @@ document.querySelectorAll('.premium-list-item, .work-item').forEach(el => {
 })();
 
 /* ========================
-   MASONRY PORTFOLIO SLIDESHOW
+   PROJECT SLIDESHOW
    ======================== */
 (function () {
     const INTERVAL = 3000; // ms per slide
 
-    document.querySelectorAll('.masonry-card').forEach(card => {
+    document.querySelectorAll('.project-card').forEach(card => {
         const slidesRaw = card.dataset.slides;
         if (!slidesRaw) return;
 
@@ -645,33 +686,31 @@ document.querySelectorAll('.premium-list-item, .work-item').forEach(el => {
         try { slides = JSON.parse(slidesRaw); } catch(e) { return; }
         if (!slides || slides.length < 2) return;
 
-        const img          = card.querySelector('.masonry-img');
-        const dotsWrap     = card.querySelector('.masonry-dots');
-        const progressFill = card.querySelector('.masonry-progress-fill');
-        const playBtn      = card.querySelector('.masonry-play-btn');
+        const img          = card.querySelector('.project-img');
+        const dotsWrap     = card.querySelector('.project-dots');
+        const progressFill = card.querySelector('.project-progress-fill');
+        const playBtn      = card.querySelector('.project-play-btn');
         const iconPlay     = playBtn.querySelector('.icon-play');
         const iconPause    = playBtn.querySelector('.icon-pause');
 
         let current  = 0;
         let isPlaying = false;
         let timer    = null;
-        let progressTimer = null;
-        let progressStart = null;
 
         // Build dot indicators
         slides.forEach((_, i) => {
             const dot = document.createElement('span');
-            dot.className = 'masonry-dot' + (i === 0 ? ' active' : '');
+            dot.className = 'project-dot' + (i === 0 ? ' active' : '');
             dotsWrap.appendChild(dot);
         });
 
-        function getDots() { return dotsWrap.querySelectorAll('.masonry-dot'); }
+        function getDots() { return dotsWrap.querySelectorAll('.project-dot'); }
 
         function goTo(index) {
             const dots = getDots();
-            dots[current].classList.remove('active');
+            if (dots[current]) dots[current].classList.remove('active');
             current = (index + slides.length) % slides.length;
-            dots[current].classList.add('active');
+            if (dots[current]) dots[current].classList.add('active');
 
             // Crossfade
             img.classList.add('slide-out');
@@ -730,8 +769,13 @@ document.querySelectorAll('.premium-list-item, .work-item').forEach(el => {
             if (isPlaying) pause(); else play();
         });
 
+        // Add pause listener for custom pause trigger
+        card.addEventListener('pauseSlideshow', () => {
+            if (isPlaying) pause();
+        });
+
         // Click card image to go to next slide (if playing)
-        card.querySelector('.masonry-img-wrap').addEventListener('click', function(e) {
+        card.querySelector('.project-img-wrap').addEventListener('click', function(e) {
             if (e.target === playBtn || playBtn.contains(e.target)) return;
             if (isPlaying) {
                 clearInterval(timer);
@@ -746,8 +790,41 @@ document.querySelectorAll('.premium-list-item, .work-item').forEach(el => {
         img.classList.add('slide-active');
         img.onerror = function() {
             this.style.display = 'none';
-            const fb = card.querySelector('.masonry-fallback');
+            const fb = card.querySelector('.project-fallback');
             if (fb) fb.style.display = 'flex';
         };
+    });
+})();
+
+/* ========================
+   PREMIUM PORTFOLIO MAGNETIC HOVER
+   ======================== */
+(function() {
+    document.querySelectorAll('.premium-port-card').forEach(card => {
+        const imgContainer = card.querySelector('.port-image-container');
+        const img = card.querySelector('img');
+        
+        if (!imgContainer || !img) return;
+
+        // Smooth transition back to center when leaving
+        img.style.transition = 'transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)';
+
+        imgContainer.addEventListener('mousemove', (e) => {
+            const rect = imgContainer.getBoundingClientRect();
+            // Calculate mouse position relative to center of the container (-1 to 1)
+            const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+            const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+            
+            // When moving, reduce transition time for responsiveness
+            img.style.transition = 'transform 0.1s linear';
+            // Magnetic pull: scale up and translate slightly towards mouse
+            img.style.transform = `scale(1.08) translate(${x * 8}px, ${y * 8}px)`;
+        });
+
+        imgContainer.addEventListener('mouseleave', () => {
+            // Restore smooth transition and reset position
+            img.style.transition = 'transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)';
+            img.style.transform = `scale(1) translate(0px, 0px)`;
+        });
     });
 })();
